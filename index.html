@@ -30,7 +30,20 @@
       --pink: #ec4899;
     }
 
-    * { box-sizin
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(168, 85, 247, 0.1), transparent 24%),
+        radial-gradient(circle at 86% 16%, rgba(250, 204, 21, 0.08), transparent 22%),
+        radial-gradient(circle at 76% 82%, rgba(236, 72, 153, 0.05), transparent 18%),
         linear-gradient(160deg, #010101 0%, #050308 46%, #020103 100%);
       background-attachment: fixed;
       padding: 40px 24px 60px;
