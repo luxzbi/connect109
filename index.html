@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HIGHWAY</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7P5XQCBCJP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7P5XQCBCJP');
+  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
   <style>
     :root {
@@ -22,20 +30,7 @@
       --pink: #ec4899;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html, body {
-      min-height: 100%;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: "Segoe UI", "Apple SD Gothic Neo", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 12% 18%, rgba(168, 85, 247, 0.1), transparent 24%),
-        radial-gradient(circle at 86% 16%, rgba(250, 204, 21, 0.08), transparent 22%),
-        radial-gradient(circle at 76% 82%, rgba(236, 72, 153, 0.05), transparent 18%),
+    * { box-sizin
         linear-gradient(160deg, #010101 0%, #050308 46%, #020103 100%);
       background-attachment: fixed;
       padding: 40px 24px 60px;
@@ -105,6 +100,17 @@
       text-transform: uppercase;
     }
 
+    .logo-notice {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: rgba(182, 172, 205, 0.5);
+      letter-spacing: 0.02em;
+    }
+
+    .mobile-notice {
+      display: none;
+    }
+
     /* ── Category Section ── */
     .section {
       margin-bottom: 40px;
@@ -139,6 +145,26 @@
       color: #f472b6;
       background: rgba(244, 114, 182, 0.1);
       border-color: rgba(244, 114, 182, 0.25);
+    }
+
+    .section-label.simulator {
+      color: #34d399;
+      background: rgba(52, 211, 153, 0.1);
+      border-color: rgba(52, 211, 153, 0.25);
+    }
+
+    .card.simulator::before {
+      background: linear-gradient(180deg, rgba(52,211,153,0.8), rgba(250,204,21,0.8));
+    }
+
+    .card.simulator:hover {
+      border-color: rgba(52, 211, 153, 0.4);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.07),
+        0 0 24px rgba(52,211,153,0.12),
+        0 0 36px rgba(250,204,21,0.08),
+        0 16px 48px rgba(0,0,0,0.55);
+      background: linear-gradient(145deg, rgba(52,211,153,0.07), rgba(250,204,21,0.05));
     }
 
     .card.flashcard::before {
@@ -254,6 +280,23 @@
       margin-bottom: auto;
       padding-bottom: 14px;
       line-height: 1.3;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .badge-haktuksa {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #34d399;
+      background: rgba(52, 211, 153, 0.1);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      border-radius: 5px;
+      padding: 2px 7px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .card-url {
@@ -308,15 +351,16 @@
         top: 0;
         z-index: 10;
         margin-bottom: 0;
-        padding: 18px 20px 14px;
+        padding: 16px 20px 14px;
         background: rgba(5, 3, 8, 0.82);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border-bottom: 1px solid rgba(255,255,255,0.06);
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 10px;
-        text-align: left;
+        gap: 4px;
+        text-align: center;
       }
 
       .logo {
@@ -328,6 +372,18 @@
         font-size: 0.72rem;
         margin-top: 0;
         letter-spacing: 0.08em;
+      }
+
+      /* PC의 notice는 숨기고 모바일 전용 notice 표시 */
+      .header .logo-notice {
+        display: none;
+      }
+
+      .mobile-notice {
+        display: block;
+        text-align: center;
+        margin: 0 16px 0;
+        padding-bottom: 4px;
       }
 
       /* 스크롤 가능한 콘텐츠 영역 */
@@ -417,6 +473,7 @@
     <header class="header">
       <h1 class="logo"><span class="logo-accent">HIGHWAY</span></h1>
       <p class="logo-sub">LINK highway &nbsp;·&nbsp; 1-9</p>
+      <p class="logo-notice">학특사, 프로젝트 등의 링크를 연동시키고 싶은 분은 관리자 카카오톡 개인 톡으로 연락바랍니다.</p>
     </header>
 
     <div class="content">
@@ -430,22 +487,22 @@
       <div class="grid">
         <a class="card" href="https://ds109.life" target="_blank" rel="noopener">
           <span class="card-arrow">↗</span>
-          <div class="card-name">1-9 아지트</div>
+          <div class="card-name">1-9 아지트 <span class="badge-haktuksa">학특사</span></div>
           <div class="card-url">ds109.life</div>
         </a>
         <a class="card" href="https://ztec.kr" target="_blank" rel="noopener">
           <span class="card-arrow">↗</span>
-          <div class="card-name">주식게임</div>
+          <div class="card-name">주식게임 <span class="badge-haktuksa">학특사</span></div>
           <div class="card-url">ztec.kr</div>
         </a>
         <a class="card" href="https://luxzbi.github.io/CIP/" target="_blank" rel="noopener">
           <span class="card-arrow">↗</span>
-          <div class="card-name">CIP 시간표</div>
+          <div class="card-name">CIP 시간표 <span class="badge-haktuksa">학특사</span></div>
           <div class="card-url">luxzbi.github.io/CIP</div>
         </a>
         <a class="card" href="https://luxzbi.github.io/time/" target="_blank" rel="noopener">
           <span class="card-arrow">↗</span>
-          <div class="card-name">자습 타이머 도구</div>
+          <div class="card-name">자습 타이머 도구 <span class="badge-haktuksa">학특사</span></div>
           <div class="card-url">luxzbi.github.io/time</div>
         </a>
         <a class="card" href="https://bettercip.pages.dev/" target="_blank" rel="noopener">
@@ -498,6 +555,11 @@
           <div class="card-name">CIP 불참 예약</div>
           <div class="card-url">ds109.life/s/U7WUev</div>
         </a>
+        <a class="card external" href="https://ds109.life/s/UQOE9Q" target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-name">수강신청 프로그램</div>
+          <div class="card-url">ds109.life/s/UQOE9Q</div>
+        </a>
       </div>
     </section>
 
@@ -523,8 +585,40 @@
           <div class="card-name">사회 1~2단원</div>
           <div class="card-url">tongsaquiz.tiiny.site</div>
         </a>
+        <a class="card flashcard" href="https://wrdmstrflshcrd.netlify.app/" target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-name">워드마스터</div>
+          <div class="card-url">wrdmstrflshcrd.netlify.app</div>
+        </a>
       </div>
     </section>
+
+    <!-- 시뮬레이터 카테고리 -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-label simulator">시뮬레이터</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="grid">
+        <a class="card simulator" href="https://luxzbi.github.io/ss/" target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-name">DNA 시뮬레이터</div>
+          <div class="card-url">luxzbi.github.io/ss</div>
+        </a>
+        <a class="card simulator" href="https://luxzbi.github.io/chch/" target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-name">볼츠만 뇌 이론 시뮬레이터</div>
+          <div class="card-url">luxzbi.github.io/chch</div>
+        </a>
+        <a class="card simulator" href="https://luxzbi.github.io/accs" target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-name">석굴암 시뮬레이터</div>
+          <div class="card-url">luxzbi.github.io/accs</div>
+        </a>
+      </div>
+    </section>
+
+    <p class="logo-notice mobile-notice">학특사, 프로젝트 등의 링크를 연동시키고 싶은 분은 관리자 카카오톡 개인 톡으로 연락바랍니다.</p>
 
     <footer class="footer">
       <div>© 2026 1-9 &nbsp;All rights reserved.</div>
